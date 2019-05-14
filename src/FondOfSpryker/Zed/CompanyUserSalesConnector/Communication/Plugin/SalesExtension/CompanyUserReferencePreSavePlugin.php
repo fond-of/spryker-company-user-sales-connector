@@ -20,5 +20,7 @@ class CompanyUserReferencePreSavePlugin extends AbstractPlugin implements OrderE
     public function expand(SpySalesOrderEntityTransfer $salesOrderEntityTransfer, QuoteTransfer $quoteTransfer): SpySalesOrderEntityTransfer
     {
         $salesOrderEntityTransfer->setCompanyUserReference($quoteTransfer->getCompanyUserReference());
+
+        return $salesOrderEntityTransfer;
     }
 }
